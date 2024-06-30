@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "@/lib/store/provider/store-provider";
+import Stack from "@mui/material/Stack";
+import AppHeader from "@/components/header";
+import { Container } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <Stack>
+            <AppHeader />
+            <Container component={'main'} maxWidth="lg">
+              {children}
+            </Container>
+          </Stack>
+        </StoreProvider>
       </body>
     </html>
   );

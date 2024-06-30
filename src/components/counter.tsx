@@ -14,7 +14,7 @@ export  default function Counter() {
 
   return (
     <Container>
-      <Typography variant='h2'>{count}</Typography>
+      <Typography variant='h2' sx={{color:'#00a400'}}>{count}</Typography>
       <Box>
         <Button variant='contained' onClick={()=>dispatch(increment())}>Increment</Button>
         <Button variant='contained' onClick={()=>dispatch(decrement())}>Decrement</Button>
